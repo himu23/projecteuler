@@ -1,6 +1,6 @@
 //learned about lcm of n numbers
 #include "bits/stdc++.h"
-//#define int long long
+#define int long long
 #define uint unsigned long long
 #define vi vector<int>
 #define pb push_back
@@ -25,7 +25,7 @@ int32_t main() {
         i++;
     }
     int lcm=v[0];
-    for(int i=0;i<n;i++){
+    for(int i=1;i<n;i++){
         lcm=(lcm*v[i])/(gcd(lcm,v[i]));
     }
     cout<<lcm<<endl;
