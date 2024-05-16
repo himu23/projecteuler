@@ -1,10 +1,38 @@
+//it was good.
+//taught me about strings
 #include "bits/stdc++.h"
 #define int long long
 #define uint unsigned long long
 #define vi vector<int>
 #define pb push_back
+#define sc static_cast
 using namespace std;
-
+string reverse(string s){
+    string reversed="";
+    int n=s.length();
+    for(int i = n - 1; i >= 0; i--){
+        reversed += s[i];
+    }
+    return reversed;
+}
+string addstring(string num1, string num2){
+    int a=num1.length(), b=num2.length();
+    int carry=0;
+    int n=max(a,b);
+    string result="";
+    num1= reverse(num1), num2=reverse(num2);
+    for(int i=0;i<n;i++){
+        int digit1 = (i < a) ? (num1[i] - '0') : 0;
+        int digit2 = (i < b) ? (num2[i] - '0') : 0;
+        int sum = digit1 + digit2 + carry;
+        carry=0;
+        result+=sc<char>(sum%10+'0');
+        carry=sum/10;
+    }
+    if(carry>0) result+=carry+'0';
+    result=reverse(result);
+    return result;
+}
 int32_t main() {
     string a[100] = {
         "37107287533902102798797998220837590246510135740250",
@@ -108,5 +136,12 @@ int32_t main() {
         "20849603980134001723930671666823555245252804609722",
         "53503534226472524250874054075591789781264330331690"
     };
+    string ans=a[0];
+    for(int i=1;i<100;i++){
+        ans=addstring(ans,a[i]);
+    }
+    for(int i=0;i<10;i++){
+        cout<<ans[i];
+    }
     return 0;
 }
