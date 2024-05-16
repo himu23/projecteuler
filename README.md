@@ -1,1 +1,1 @@
-solving problems from projecteuler.net
+solving problems from [Project Euler] (projecteuler.net)
