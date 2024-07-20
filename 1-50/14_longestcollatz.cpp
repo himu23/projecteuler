@@ -1,46 +1,21 @@
-//most dificult for me till now
-//learned a bit more about recursions and vectors
-//did it before learning dp
-#include "bits/stdc++.h"
-#define int long long
-#define uint unsigned long long
-#define vi vector<int>
-#define pb push_back
-#define sc static_cast
+#include <bits/stdc++.h>
 using namespace std;
-int32_t coll(int n, int count=0, vi* v=nullptr){
-    if (v!= nullptr) {
-        v->pb(n);
-    }
-    count++;
-    if(n==1) return count;
-    if(n%2==0) return coll(n/2,count, v);
-    else return coll(3*n+1,count, v);
+#define int long long int
+
+int getcoll(int n){
+    if(n==1) return;
 }
-bool findandremove(vi& vec, int n){
-    auto it=find(vec.begin(),vec.end(), n);
-    if (it != vec.end()) {
-        vec.erase(it);
-        return true;
-    } else {
-        return false;
+
+void fillthedp(int* dp){
+    dp[1]=1, dp[2]=2, dp[3]=8, dp[4]=3;
+    for(int i=1;i<=3000001;i++){
+        if(n%2==0) dp[n]=max()
     }
 }
+
 int32_t main() {
-    int ans=0;
-    int b=1;
-    vi v;
-    coll(999999,0,&v);
-    vi w;
-    for(int i=1;i<=1000000;i++){
-        w.pb(i);
-    }
-    for(auto it= v.begin(); it!= v.end(); ++it) {
-        findandremove(w,*it);
-    }
-    int ans=999999;
-    for(auto it= w.end(); it!= w.begin(); --it){
-        
-    }
+    cin.tie(0)->sync_with_stdio(false);
+    int dp[3000001];
+    fillthedp(dp);
     return 0;
 }
